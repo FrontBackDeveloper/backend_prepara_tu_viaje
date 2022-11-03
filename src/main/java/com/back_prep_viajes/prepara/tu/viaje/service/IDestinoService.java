@@ -8,7 +8,7 @@ import java.util.List;
 public interface IDestinoService {
     public List<Destino> obtenerDestino();
     public void crearDestino(Destino destino);
-    public void borrarDestino(Long id_detino);
-    public Destino obtenerDestino(Long id_destino);
+    public void borrarDestino(Long id);
+    public Destino obtenerDestino(Long id);
     public void modificarDestino(Destino destino);
 }

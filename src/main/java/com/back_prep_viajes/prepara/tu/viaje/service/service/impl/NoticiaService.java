@@ -25,13 +25,13 @@ public class NoticiaService implements INoticiaService{
           }
 
     @Override
-    public void borrarNoticia(Long id_noticia) {
-        repository.deleteById(id_noticia);
+    public void borrarNoticia(Long id) {
+        repository.deleteById(id);
         }
 
     @Override
-    public Noticia obtenerNoticia(Long id_noticia) {
-        return repository.findById(id_noticia).orElse(null);
+    public Noticia obtenerNoticia(Long id) {
+        return repository.findById(id).orElse(null);
          }
 
     @Override

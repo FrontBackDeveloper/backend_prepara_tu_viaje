@@ -24,13 +24,13 @@ public class BlogService implements IBlogService{
          }
 
     @Override
-    public void borrarBlog(Long id_blog) {
-        repository.deleteById(id_blog);
+    public void borrarBlog(Long id) {
+        repository.deleteById(id);
         }
 
     @Override
-    public Blog obtenerBlog(Long id_blog) {
-        return repository.findById(id_blog).orElse(null);
+    public Blog obtenerBlog(Long id) {
+        return repository.findById(id).orElse(null);
        }
 
     @Override

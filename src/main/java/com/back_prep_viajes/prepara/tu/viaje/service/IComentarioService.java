@@ -8,7 +8,7 @@ import java.util.List;
 public interface IComentarioService {
     public List<Comentario> obtenerComentario();
     public void crearComentario(Comentario comentario);
-    public void borrarComentario(Long id_comentario);
-    public Comentario obtenerComentario(Long id_comentario);
+    public void borrarComentario(Long id);
+    public Comentario obtenerComentario(Long id);
     public void modificarComentario(Comentario comentario);
 }

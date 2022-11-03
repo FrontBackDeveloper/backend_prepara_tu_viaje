@@ -25,13 +25,13 @@ public class DestinoService implements IDestinoService{
         }
 
     @Override
-    public void borrarDestino(Long id_detino) {
-        repository.deleteById(id_detino);
+    public void borrarDestino(Long id) {
+        repository.deleteById(id);
          }
 
     @Override
-    public Destino obtenerDestino(Long id_destino) {
-        return repository.findById(id_destino).orElse(null);
+    public Destino obtenerDestino(Long id) {
+        return repository.findById(id).orElse(null);
         }
 
     @Override

@@ -8,7 +8,7 @@ import java.util.List;
 public interface IGastoService {
     public List<Gasto> obtenerGasto();
     public void crearGasto(Gasto gasto);
-    public void borrarGasto (Long id_gasto);
-    public Gasto obtenerGasto(Long id_gasto);
+    public void borrarGasto (Long id);
+    public Gasto obtenerGasto(Long id);
     public void modificarGasto(Gasto gasto);
 }

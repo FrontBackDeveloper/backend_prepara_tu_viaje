@@ -8,7 +8,7 @@ import java.util.List;
 public interface IBlogService {
     public List<Blog> obtenerBlog();
     public void crearBlog(Blog blog);
-    public void borrarBlog(Long id_blog);
-    public Blog obtenerBlog(Long id_blog);
+    public void borrarBlog(Long id);
+    public Blog obtenerBlog(Long id);
     public void modificarBlog(Blog blog);
 }

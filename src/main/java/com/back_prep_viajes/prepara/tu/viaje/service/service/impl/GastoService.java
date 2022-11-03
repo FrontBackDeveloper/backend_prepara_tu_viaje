@@ -25,13 +25,13 @@ public class GastoService implements IGastoService{
         }
 
     @Override
-    public void borrarGasto(Long id_gasto) {
-        repository.deleteById(id_gasto);
+    public void borrarGasto(Long id) {
+        repository.deleteById(id);
         }
 
     @Override
-    public Gasto obtenerGasto(Long id_gasto) {
-        return repository.findById(id_gasto).orElse(null);
+    public Gasto obtenerGasto(Long id) {
+        return repository.findById(id).orElse(null);
         }
 
     @Override

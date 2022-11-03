@@ -6,32 +6,40 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
 @Entity
+@Table(name="gastos")
 
 public class Gasto {
-      @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_gasto;
+    private Long id;
       
-      @Basic
-    private Long   id_usuario;
+    @Basic
     private String nombre;
     private String moneda;
     private Long   total;
     
+    @ManyToOne
+    @JoinColumn(name="id_presupuesto")
+    private Presupuesto presupuesto;
+    
     public Gasto() {
     }
 
-    public Gasto(Long id_usuario, String nombre, String moneda, Long total) {
-       
-        this.id_usuario = id_usuario;
-        this.nombre     = nombre;
-        this.moneda     = moneda;
-        this.total      = total;
+    public Gasto(String nombre, String moneda, Long total, Presupuesto presupuesto) {
+        this.nombre = nombre;
+        this.moneda = moneda;
+        this.total = total;
+        this.presupuesto = presupuesto;
     }
+
+   
     
 }

@@ -24,13 +24,13 @@ public class ComentarioService implements IComentarioService{
          }
 
     @Override
-    public void borrarComentario(Long id_comentario) {
-        repository.deleteById(id_comentario);
+    public void borrarComentario(Long id) {
+        repository.deleteById(id);
           }
 
     @Override
-    public Comentario obtenerComentario(Long id_comentario) {
-        return repository.findById(id_comentario).orElse(null);
+    public Comentario obtenerComentario(Long id) {
+        return repository.findById(id).orElse(null);
       }
 
     @Override

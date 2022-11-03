@@ -6,16 +6,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
 @Entity
+@Table(name="noticias")
 
 public class Noticia {
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_noticia;
+    private Long id;
      
      @Basic
     private String origen;
@@ -28,12 +30,16 @@ public class Noticia {
     public Noticia() {
     }
 
-    public Noticia(String origen, String url, String fecha_publicado) {
-      
-        this.origen          = origen;
-        this.url             = url;
+    public Noticia(String origen, String titulo, String descripcion, String url, String imagen, String fecha_publicado) {
+        this.origen = origen;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.url = url;
+        this.imagen = imagen;
         this.fecha_publicado = fecha_publicado;
     }
+
+ 
          
     }
   
