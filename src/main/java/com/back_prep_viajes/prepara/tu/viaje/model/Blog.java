@@ -13,9 +13,9 @@ import lombok.Setter;
 @Entity
 
 public class Blog {
-      @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_blog;
+    private Long id;
      
      @Basic
     private String titulo;
@@ -26,8 +26,8 @@ public class Blog {
     }
 
     public Blog(String titulo, String texto, String fecha_publicado) {
-        this.titulo          = titulo;
-        this.texto           = texto;
+        this.titulo  = titulo;
+        this.texto  = texto;
         this.fecha_publicado = fecha_publicado;
     }
     

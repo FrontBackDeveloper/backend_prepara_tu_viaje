@@ -8,7 +8,7 @@ import java.util.List;
 public interface IPresupuestoService {
     public List<Presupuesto> obtenerPresupuesto();
     public void crearPresupuesto(Presupuesto presupuesto);
-    public void borrarPresupuesto(Long id_presupuesto);
-    public Presupuesto obtenerPresupuesto(Long id_presupuesto);
+    public void borrarPresupuesto(Long id);
+    public Presupuesto obtenerPresupuesto(Long id);
     public void modificarPresupuesto(Presupuesto presupuesto);
 }

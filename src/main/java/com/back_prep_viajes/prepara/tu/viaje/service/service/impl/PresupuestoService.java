@@ -25,13 +25,13 @@ public class PresupuestoService implements IPresupuestoService{
         }
 
     @Override
-    public void borrarPresupuesto(Long id_presupuesto) {
-        repository.deleteById(id_presupuesto);
+    public void borrarPresupuesto(Long id) {
+        repository.deleteById(id);
         }
 
     @Override
-    public Presupuesto obtenerPresupuesto(Long id_presupuesto) {
-        return repository.findById(id_presupuesto).orElse(null);
+    public Presupuesto obtenerPresupuesto(Long id) {
+        return repository.findById(id).orElse(null);
         }
 
     @Override
