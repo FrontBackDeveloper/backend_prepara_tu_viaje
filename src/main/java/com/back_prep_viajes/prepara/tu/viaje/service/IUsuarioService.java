@@ -6,8 +6,6 @@ import java.util.List;
 
 
 public interface IUsuarioService {
-    public List<Usuario> obtenerUsuario();
-    public void crearUsuario(Usuario usuario);
     public void borrarUsuario(Long id);
     public Usuario obtenerUsuario(Long id);
     public void modificarUsuario(Usuario usuario);

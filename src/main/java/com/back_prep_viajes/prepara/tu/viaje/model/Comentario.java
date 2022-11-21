@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,18 +30,25 @@ public class Comentario {
     private String foto_perfil;
     private String comentario;
     private String fecha_publicado;
+    
+    @OneToMany (mappedBy="comentario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    
+    private List<Respuesta> listaRespuesta;
   
     
    
     public Comentario() {
     }
 
-    public Comentario(String nombre_usuario, String foto_perfil, String comentario, String fecha_publicado) {
+    public Comentario(String nombre_usuario, String foto_perfil, String comentario, String fecha_publicado, List<Respuesta> listaRespuesta) {
         this.nombre_usuario = nombre_usuario;
         this.foto_perfil = foto_perfil;
         this.comentario = comentario;
         this.fecha_publicado = fecha_publicado;
+        this.listaRespuesta = listaRespuesta;
     }
+
+   
 
   
     

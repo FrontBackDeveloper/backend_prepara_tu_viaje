@@ -1,6 +1,8 @@
 
 package com.back_prep_viajes.prepara.tu.viaje.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Table(name="gastos")
 
-public class Gasto {
+public class Gasto implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,6 +30,7 @@ public class Gasto {
     
     @ManyToOne
     @JoinColumn(name="id_presupuesto")
+    @JsonIgnore
     private Presupuesto presupuesto;
     
     public Gasto() {

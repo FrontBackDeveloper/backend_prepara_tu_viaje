@@ -40,7 +40,7 @@ public class AuthService {
             throw new Exception("El email ya fue registrado");
         else {
             usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
-            usuario.setEnabled(true);
+            usuario.setIsEnabled(true);
             repository.save(usuario);
         }
     }

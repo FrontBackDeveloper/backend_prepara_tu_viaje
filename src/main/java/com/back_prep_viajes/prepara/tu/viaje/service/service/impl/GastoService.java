@@ -4,6 +4,7 @@ package com.back_prep_viajes.prepara.tu.viaje.service.service.impl;
 import com.back_prep_viajes.prepara.tu.viaje.model.Gasto;
 import com.back_prep_viajes.prepara.tu.viaje.repository.GastoRepository;
 import com.back_prep_viajes.prepara.tu.viaje.service.IGastoService;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +17,9 @@ public class GastoService implements IGastoService{
             
     @Override
     public List<Gasto> obtenerGasto() {
-        return repository.findAll();
+      return repository.findAll();
          }
+   
 
     @Override
     public void crearGasto(Gasto gasto) {
