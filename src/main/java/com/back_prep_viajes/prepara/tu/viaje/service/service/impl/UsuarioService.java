@@ -15,16 +15,6 @@ public class UsuarioService implements IUsuarioService{
     public UsuarioRepository repository;
 
     @Override
-    public List<Usuario> obtenerUsuario() {
-      return repository.findAll();
-    }
-
-    @Override
-    public void crearUsuario(Usuario usuario) {
-      repository.save(usuario);
-    }
-
-    @Override
     public void borrarUsuario(Long id) {
        repository.deleteById(id);
     }

@@ -1,10 +1,15 @@
 
 package com.back_prep_viajes.prepara.tu.viaje.model;
 
+import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,9 +22,10 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
+
 @Table(name="presupuestos")
 
-public class Presupuesto {
+public class Presupuesto implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,23 +34,27 @@ public class Presupuesto {
     private String nombre;
     private long total;
     
-    @OneToMany (mappedBy="presupuesto",cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Gasto> listagastos;
+    @OneToMany (mappedBy="presupuesto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Gasto> listaGastos;
     
     @ManyToOne
     @JoinColumn(name="id_usuario")
+    @JsonIgnore
     private Usuario usuario;
     
     
     public Presupuesto() {
     }
 
-    public Presupuesto(String nombre, long total, List<Gasto> listagastos, Usuario usuario) {
+    public Presupuesto(String nombre, long total, List<Gasto> listaGastos, Usuario usuario) {
         this.nombre = nombre;
         this.total = total;
-        this.listagastos = listagastos;
+        this.listaGastos = listaGastos;
         this.usuario = usuario;
     }
+
+ 
+    
 
    
 
